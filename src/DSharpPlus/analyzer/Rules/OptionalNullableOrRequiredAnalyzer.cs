@@ -51,6 +51,11 @@ public sealed class OptionalNullableOrRequiredAnalyzer : DiagnosticAnalyzer
             return;
         }
 
+        if (!declaration.ContainingType.IsRecord)
+        {
+            return;
+        }
+
         // check for our own optional type
         if (declaration.Type is INamedTypeSymbol { Arity: 1, MetadataName: "Optional`1" } optionalType
             && optionalType.ContainingNamespace.GetFullNamespace() == "DSharpPlus.Entities")
