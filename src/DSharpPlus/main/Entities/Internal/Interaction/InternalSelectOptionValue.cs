@@ -8,13 +8,13 @@ public sealed record InternalSelectOptionValue
     /// The user-facing name of the option, max 100 characters.
     /// </summary>
     [JsonPropertyName("label")]
-    public string Label { get; init; } = null!;
+    public required string Label { get; init; } 
 
     /// <summary>
     /// The dev-defined value of the option, max 100 characters.
     /// </summary>
     [JsonPropertyName("value")]
-    public string Value { get; init; } = null!;
+    public required string Value { get; init; } 
 
     /// <summary>
     /// An additional description of the option, max 100 characters.

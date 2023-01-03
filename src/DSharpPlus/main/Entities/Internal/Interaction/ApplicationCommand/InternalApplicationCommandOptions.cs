@@ -9,13 +9,16 @@ public sealed record InternalApplicationCommandOption
     /// The type of option.
     /// </summary>
     [JsonPropertyName("type")]
-    public DiscordApplicationCommandOptionType Type { get; init; }
+    public required DiscordApplicationCommandOptionType Type { get; init; }
 
     /// <summary>
-    /// A 1-32 character name that matches against the following Regex: <c>^[-_\p{L}\p{N}\p{sc=Deva}\p{sc=Thai}]{1,32}$</c> with the unicode flag set. If there is a lowercase variant of any letters used, you must use those. Characters with no lowercase variants and/or uncased letters are still allowed. <see cref="DiscordApplicationCommandType.User"/> and <see cref="DiscordApplicationCommandType.Message"/> commands may be mixed case and can include spaces.
+    /// A 1-32 character name that matches against the following Regex: <c>^[-_\p{L}\p{N}\p{sc=Deva}\p{sc=Thai}]{1,32}$</c> with the 
+    /// unicode flag set. If there is a lowercase variant of any letters used, you must use those. Characters with no lowercase variants 
+    /// and/or uncased letters are still allowed. <see cref="DiscordApplicationCommandType.User"/> and 
+    /// <see cref="DiscordApplicationCommandType.Message"/> commands may be mixed case and can include spaces.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } = null!;
 
     /// <summary>
     /// Localization dictionary for the <c>name</c> field. Values follow the same restrictions as <c>name</c>.
@@ -24,10 +27,11 @@ public sealed record InternalApplicationCommandOption
     public Optional<IReadOnlyDictionary<string, string>> NameLocalizations { get; init; }
 
     /// <summary>
-    /// 1-100 character description for <see cref="DiscordApplicationCommandType.ChatInput"/> commands, empty string for <see cref="InternalApplicationCommandType.User"/> and <see cref="InternalApplicationCommandType.Message"/> commands.
+    /// 1-100 character description for <see cref="DiscordApplicationCommandType.ChatInput"/> commands, empty string for 
+    /// <see cref="DiscordApplicationCommandType.User"/> and <see cref="DiscordApplicationCommandType.Message"/> commands.
     /// </summary>
     [JsonPropertyName("description")]
-    public string Description { get; init; } = null!;
+    public required string Description { get; init; } 
 
     /// <summary>
     /// Localization dictionary for the <c>description</c> field. Values follow the same restrictions as <c>description</c>.
@@ -42,7 +46,8 @@ public sealed record InternalApplicationCommandOption
     public Optional<bool> Required { get; init; }
 
     /// <summary>
-    /// The choices for <see cref="DiscordApplicationCommandOptionType.String"/>, <see cref="DiscordApplicationCommandOptionType.Integer"/>, and <see cref="DiscordApplicationCommandOptionType.Number"/> types for the user to pick from, max 25.
+    /// The choices for <see cref="DiscordApplicationCommandOptionType.String"/>, <see cref="DiscordApplicationCommandOptionType.Integer"/>, 
+    /// and <see cref="DiscordApplicationCommandOptionType.Number"/> types for the user to pick from, max 25.
     /// </summary>
     [JsonPropertyName("choices")]
     public Optional<InternalApplicationCommandOptionChoice> Choices { get; init; }
@@ -60,19 +65,22 @@ public sealed record InternalApplicationCommandOption
     public Optional<DiscordChannelType> ChannelTypes { get; init; }
 
     /// <summary>
-    /// If the option is an <see cref="DiscordApplicationCommandOptionType.Integer"/>, or <see cref="DiscordApplicationCommandOptionType.Number"/> type, the minimum value permitted.
+    /// If the option is an <see cref="DiscordApplicationCommandOptionType.Integer"/>, or 
+    /// <see cref="DiscordApplicationCommandOptionType.Number"/> type, the minimum value permitted.
     /// </summary>
     [JsonPropertyName("min_value")]
     public Optional<object> MinValue { get; init; }
 
     /// <summary>
-    /// If the option is an <see cref="DiscordApplicationCommandOptionType.Integer"/>, or <see cref="DiscordApplicationCommandOptionType.Number"/> type, the maximum value permitted.
+    /// If the option is an <see cref="DiscordApplicationCommandOptionType.Integer"/>, or 
+    /// <see cref="DiscordApplicationCommandOptionType.Number"/> type, the maximum value permitted.
     /// </summary>
     [JsonPropertyName("max_value")]
     public Optional<object> MaxValue { get; init; }
 
     /// <summary>
-    /// If autocomplete interactions are enabled for this <see cref="DiscordApplicationCommandOptionType.String"/>, <see cref="DiscordApplicationCommandOptionType.Integer"/>, or <see cref="DiscordApplicationCommandOptionType.Number"/> type option.
+    /// If autocomplete interactions are enabled for this <see cref="DiscordApplicationCommandOptionType.String"/>, 
+    /// <see cref="DiscordApplicationCommandOptionType.Integer"/>, or <see cref="DiscordApplicationCommandOptionType.Number"/> type option.
     /// </summary>
     /// <remarks>
     /// Autocomplete may not be set to true if <see cref="Choices"/> are present.

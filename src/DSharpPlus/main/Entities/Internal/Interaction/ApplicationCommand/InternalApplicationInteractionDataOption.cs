@@ -4,7 +4,8 @@ using System.Text.Json.Serialization;
 namespace DSharpPlus.Entities.Internal;
 
 /// <summary>
-/// All options have names, and an option can either be a parameter and input value--in which case value will be set--or it can denote a subcommand or group--in which case it will contain a top-level key and another array of options.
+/// All options have names, and an option can either be a parameter and input value--in which case value will be set--or it can denote a 
+/// subcommand or group--in which case it will contain a top-level key and another array of options.
 /// </summary>
 public sealed record InternalApplicationInteractionDataOption
 {
@@ -12,13 +13,13 @@ public sealed record InternalApplicationInteractionDataOption
     /// The name of the parameter.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } 
 
     /// <summary>
     /// The value of <see cref="DiscordApplicationCommandOptionType"/>.
     /// </summary>
     [JsonPropertyName("type")]
-    public DiscordApplicationCommandOptionType Type { get; init; }
+    public required DiscordApplicationCommandOptionType Type { get; init; }
 
     /// <summary>
     /// The value of the option resulting from user input.
@@ -30,7 +31,8 @@ public sealed record InternalApplicationInteractionDataOption
     public Optional<object> Value { get; init; }
 
     /// <summary>
-    /// Only present if this option is a <see cref="DiscordApplicationCommandOptionType.SubCommand"/> or <see cref="DiscordApplicationCommandOptionType.SubCommandGroup"/>.
+    /// Only present if this option is a <see cref="DiscordApplicationCommandOptionType.SubCommand"/> or 
+    /// <see cref="DiscordApplicationCommandOptionType.SubCommandGroup"/>.
     /// </summary>
     /// <remarks>
     /// Mutually exclusive with <see cref="Value"/>.

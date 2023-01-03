@@ -9,19 +9,19 @@ public sealed record InternalInteraction
     /// The ID of the invoked command.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; } 
 
     /// <summary>
     /// The name of the invoked command.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } 
 
     /// <summary>
     /// The type of the invoked command.
     /// </summary>
     [JsonPropertyName("type")]
-    public DiscordInteractionType Type { get; init; }
+    public required DiscordInteractionType Type { get; init; }
 
     /// <summary>
     /// The converted users + roles + channels + attachments attached to the interaction.
