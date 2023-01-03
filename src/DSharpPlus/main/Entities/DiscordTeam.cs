@@ -116,7 +116,7 @@ public sealed class DiscordTeamMember : IEquatable<DiscordTeamMember>
     /// <summary>
     /// Gets the member's permissions within the team.
     /// </summary>
-    public IReadOnlyCollection<string> Permissions { get; internal set; }
+    public IReadOnlyList<string> Permissions { get; internal set; }
 
     /// <summary>
     /// Gets the team this member belongs to.
@@ -131,7 +131,7 @@ public sealed class DiscordTeamMember : IEquatable<DiscordTeamMember>
     internal DiscordTeamMember(TransportTeamMember ttm)
     {
         MembershipStatus = (DiscordTeamMembershipStatus)ttm.MembershipState;
-        Permissions = new ReadOnlySet<string>(new HashSet<string>(ttm.Permissions));
+        Permissions = new List<string>(ttm.Permissions).AsReadOnly();
     }
 
     /// <summary>
