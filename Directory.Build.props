@@ -19,6 +19,10 @@
         <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
         <ManagePackageVersionsCentrally>True</ManagePackageVersionsCentrally>
 
+        <!-- Code Analysis -->
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
         <!-- SourceLink -->
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
