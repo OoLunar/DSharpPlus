@@ -8,13 +8,13 @@ public sealed record InternalIntegrationApplication
     /// The id of the app.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; } 
 
     /// <summary>
     /// The name of the app.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; }
 
     /// <summary>
     /// The icon hash of the app.
@@ -26,7 +26,7 @@ public sealed record InternalIntegrationApplication
     /// The description of the app.
     /// </summary>
     [JsonPropertyName("description")]
-    public string Description { get; init; } = null!;
+    public required string Description { get; init; } 
 
     /// <summary>
     /// The bot associated with this application.

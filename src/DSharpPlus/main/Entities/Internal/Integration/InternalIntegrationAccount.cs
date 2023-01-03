@@ -8,11 +8,11 @@ public sealed record InternalIntegrationAccount
     /// The id of the account.
     /// </summary>
     [JsonPropertyName("id")]
-    public string Id { get; init; } = null!;
+    public required string Id { get; init; } 
 
     /// <summary>
     /// The name of the account.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } 
 }

@@ -9,19 +9,19 @@ public sealed record InternalIntegration
     /// The integration id.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; }
 
     /// <summary>
     /// The integration name.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; }
 
     /// <summary>
     /// The integration type (twitch, youtube, or discord).
     /// </summary>
     [JsonPropertyName("type")]
-    public DiscordIntegrationType Type { get; init; }
+    public required DiscordIntegrationType Type { get; init; }
 
     /// <summary>
     /// Is this integration enabled.
@@ -30,7 +30,7 @@ public sealed record InternalIntegration
     /// Not provided for Discord Bot integrations.
     /// </remarks>
     [JsonPropertyName("enabled")]
-    public bool Enabled { get; init; }
+    public required bool Enabled { get; init; }
 
     /// <summary>
     /// Is this integration syncing.
@@ -90,7 +90,7 @@ public sealed record InternalIntegration
     /// The integration account information.
     /// </summary>
     [JsonPropertyName("account")]
-    public InternalIntegrationAccount Account { get; init; } = null!;
+    public required InternalIntegrationAccount Account { get; init; }
 
     /// <summary>
     /// When this integration was last synced.
