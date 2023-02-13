@@ -8,17 +8,17 @@ public sealed record InternalReaction
     /// Times this emoji has been used to react.
     /// </summary>
     [JsonPropertyName("count")]
-    public int Count { get; init; }
+    public required int Count { get; init; }
 
     /// <summary>
     /// Whether the current user reacted using this emoji.
     /// </summary>
     [JsonPropertyName("me")]
-    public bool Me { get; init; }
+    public required bool Me { get; init; }
 
     /// <summary>
     /// The emoji information.
     /// </summary>
     [JsonPropertyName("emoji")]
-    public InternalEmoji Emoji { get; init; } = null!;
+    public required InternalEmoji Emoji { get; init; } 
 }

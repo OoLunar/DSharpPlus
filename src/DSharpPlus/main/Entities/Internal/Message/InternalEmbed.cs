@@ -5,12 +5,15 @@ using System.Text.Json.Serialization;
 namespace DSharpPlus.Entities.Internal;
 
 /// <remarks>
-/// The combined sum of characters in all <see cref="Title"/>, <see cref="Description"/>, <see cref="InternalEmbedField.Name"/>, <see cref="InternalEmbedField.Value"/>, <see cref="InternalEmbedFooter.Text"/>, and <see cref="InternalEmbedAuthor.Name"/> fields across all embeds attached to a message must not exceed 6000 characters. Violating any of these constraints will result in a Bad Request response.
+/// The combined sum of characters in all <see cref="Title"/>, <see cref="Description"/>, <see cref="InternalEmbedField.Name"/>, 
+/// <see cref="InternalEmbedField.Value"/>, <see cref="InternalEmbedFooter.Text"/>, and <see cref="InternalEmbedAuthor.Name"/> fields 
+/// across all embeds attached to a message must not exceed 6000 characters. Violating any of these constraints will result in a 
+/// Bad Request response.
 /// </remarks>
 public sealed record InternalEmbed
 {
     /// <summary>
-    /// The title of embed.
+    /// The title of the embed.
     /// </summary>
     /// <remarks>
     /// Max 256 characters.
@@ -27,7 +30,7 @@ public sealed record InternalEmbed
 #pragma warning restore CS0618 // Type or member is obsolete
 
     /// <summary>
-    /// The description of embed.
+    /// The description of the embed.
     /// </summary>
     /// <remarks>
     /// Max 4096 characters.
@@ -36,7 +39,7 @@ public sealed record InternalEmbed
     public Optional<string> Description { get; init; }
 
     /// <summary>
-    /// The url of embed.
+    /// The url of the embed.
     /// </summary>
     [JsonPropertyName("url")]
     public Optional<string> Url { get; init; }
@@ -90,7 +93,7 @@ public sealed record InternalEmbed
     public Optional<InternalEmbedAuthor> Author { get; init; }
 
     /// <summary>
-    /// Fields information.
+    /// A list of embed fields.
     /// </summary>
     /// <remarks>
     /// Max 25 fields.

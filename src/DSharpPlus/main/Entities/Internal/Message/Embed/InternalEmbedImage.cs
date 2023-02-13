@@ -8,7 +8,7 @@ public sealed record InternalEmbedImage
     /// The source url of the image (only supports http(s) and attachments).
     /// </summary>
     [JsonPropertyName("url")]
-    public string Url { get; init; } = null!;
+    public required string Url { get; init; } 
 
     /// <summary>
     /// A proxied url of the image.

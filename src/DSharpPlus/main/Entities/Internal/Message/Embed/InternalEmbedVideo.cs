@@ -8,7 +8,7 @@ public sealed record InternalEmbedVideo
     /// The source url of video.
     /// </summary>
     [JsonPropertyName("url")]
-    public Optional<string> Url { get; init; } = null!;
+    public Optional<string> Url { get; init; }
 
     /// <summary>
     /// A proxied url of the video.

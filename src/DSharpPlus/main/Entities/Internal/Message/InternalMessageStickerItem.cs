@@ -11,17 +11,17 @@ public sealed record InternalMessageStickerItem
     /// The id of the sticker.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; } 
 
     /// <summary>
     /// The name of the sticker.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; }
 
     /// <summary>
     /// The type of sticker format.
     /// </summary>
     [JsonPropertyName("format_type")]
-    public DiscordStickerFormatType FormatType { get; init; }
+    public required DiscordStickerFormatType FormatType { get; init; }
 }

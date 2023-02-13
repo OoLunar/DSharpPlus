@@ -6,25 +6,25 @@ public sealed record InternalTextInputComponent : IInternalMessageComponent
 {
     /// <inheritdoc/>
     [JsonPropertyName("type")]
-    public DiscordComponentType Type { get; init; }
+    public required DiscordComponentType Type { get; init; }
 
     /// <summary>
     /// A developer-defined identifier for the input, max 100 characters.
     /// </summary>
     [JsonPropertyName("custom_id")]
-    public string CustomId { get; init; } = null!;
+    public required string CustomId { get; init; } 
 
     /// <summary>
-    /// The <see cref="DiscordTextInputStyle"/> Text Input Style</see>.
+    /// The <see cref="DiscordTextInputStyle"> Text Input Style</see>.
     /// </summary>
     [JsonPropertyName("style")]
-    public DiscordTextInputStyle Style { get; init; }
+    public required DiscordTextInputStyle Style { get; init; }
 
     /// <summary>
     /// The label for this component, max 45 characters.
     /// </summary>
     [JsonPropertyName("label")]
-    public string Label { get; init; } = null!;
+    public required string Label { get; init; } 
 
     /// <summary>
     /// The minimum input length for a text input, min 0, max 4000.

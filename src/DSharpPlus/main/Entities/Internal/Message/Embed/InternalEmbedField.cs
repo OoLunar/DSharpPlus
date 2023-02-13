@@ -11,7 +11,7 @@ public sealed record InternalEmbedField
     /// Max 256 characters.
     /// </remarks>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } 
 
     /// <summary>
     /// The value of the field.
@@ -20,7 +20,7 @@ public sealed record InternalEmbedField
     /// Max 1024 characters.
     /// </remarks>
     [JsonPropertyName("value")]
-    public string Value { get; init; } = null!;
+    public required string Value { get; init; }
 
     /// <summary>
     /// Whether or not this field should display inline.

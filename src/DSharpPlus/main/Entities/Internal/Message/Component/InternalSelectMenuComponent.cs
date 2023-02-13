@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -8,19 +7,19 @@ public sealed record InternalSelectMenuComponent : IInternalMessageComponent
 {
     /// <inheritdoc/>
     [JsonPropertyName("type")]
-    public DiscordComponentType Type { get; init; }
+    public required DiscordComponentType Type { get; init; }
 
     /// <summary>
     /// A developer-defined identifier for the select menu, max 100 characters.
     /// </summary>
     [JsonPropertyName("custom_id")]
-    public string CustomId { get; init; } = null!;
+    public required string CustomId { get; init; } 
 
     /// <summary>
     /// The choices in the select, max 25.
     /// </summary>
     [JsonPropertyName("options")]
-    public IReadOnlyList<InternalSelectMenuOptionComponent> Options { get; init; } = Array.Empty<InternalSelectMenuOptionComponent>();
+    public required IReadOnlyList<InternalSelectMenuOptionComponent> Options { get; init; }
 
     /// <summary>
     /// The custom placeholder text if nothing is selected, max 150 characters.

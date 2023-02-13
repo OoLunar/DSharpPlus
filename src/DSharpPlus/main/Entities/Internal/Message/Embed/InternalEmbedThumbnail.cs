@@ -8,7 +8,7 @@ public sealed record InternalEmbedThumbnail
     /// The source url of thumbnail (only supports http(s) and attachments).
     /// </summary>
     [JsonPropertyName("url")]
-    public string Url { get; init; } = null!;
+    public required string Url { get; init; } 
 
     /// <summary>
     /// A proxied url of the thumbnail.
@@ -17,13 +17,13 @@ public sealed record InternalEmbedThumbnail
     public Optional<string> ProxyUrl { get; init; }
 
     /// <summary>
-    /// The height of thumbnail.
+    /// The height of the thumbnail.
     /// </summary>
     [JsonPropertyName("height")]
     public Optional<int> Height { get; init; }
 
     /// <summary>
-    /// The width of thumbnail.
+    /// The width of the thumbnail.
     /// </summary>
     [JsonPropertyName("width")]
     public Optional<int> Width { get; init; }

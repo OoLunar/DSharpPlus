@@ -11,7 +11,7 @@ public sealed record InternalEmbedAuthor
     /// Max 256 characters.
     /// </remarks>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } 
 
     /// <summary>
     /// The url of the author.

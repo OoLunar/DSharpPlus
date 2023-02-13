@@ -11,7 +11,7 @@ public sealed record InternalEmbedFooter
     /// Max 2048 characters.
     /// </remarks>
     [JsonPropertyName("text")]
-    public string Text { get; init; } = null!;
+    public required string Text { get; init; } 
 
     /// <summary>
     /// The url of footer icon (only supports http(s) and attachments).

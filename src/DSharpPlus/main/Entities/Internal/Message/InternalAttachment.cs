@@ -11,13 +11,13 @@ public sealed record InternalAttachment
     /// The attachment id.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; }
 
     /// <summary>
     /// The name of the file attached.
     /// </summary>
     [JsonPropertyName("filename")]
-    public string Filename { get; init; } = null!;
+    public required string Filename { get; init; }
 
     /// <summary>
     /// The description for the file.
@@ -26,7 +26,7 @@ public sealed record InternalAttachment
     public Optional<string> Description { get; init; }
 
     /// <summary>
-    /// The attachment's <see href="https://en.wikipedia.org/wiki/Media_type">media type</see>.
+    /// The attachment's <seealso href="https://en.wikipedia.org/wiki/Media_type">media type</seealso>.
     /// </summary>
     [JsonPropertyName("content_type")]
     public Optional<string> ContentType { get; init; }
@@ -35,19 +35,19 @@ public sealed record InternalAttachment
     /// The size of the file in bytes.
     /// </summary>
     [JsonPropertyName("size")]
-    public int Size { get; init; }
+    public required int Size { get; init; }
 
     /// <summary>
     /// The source url of file.
     /// </summary>
     [JsonPropertyName("url")]
-    public string Url { get; init; } = null!;
+    public required string Url { get; init; }
 
     /// <summary>
     /// A proxied url of file.
     /// </summary>
     [JsonPropertyName("proxy_url")]
-    public string ProxyUrl { get; init; } = null!;
+    public required string ProxyUrl { get; init; } 
 
     /// <summary>
     /// The height of file (if image).

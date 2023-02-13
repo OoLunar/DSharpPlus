@@ -5,29 +5,29 @@ namespace DSharpPlus.Entities.Internal;
 public sealed record InternalComponentInteraction
 {
     [JsonPropertyName("version")]
-    public int Version { get; init; }
+    public required int Version { get; init; }
 
     [JsonPropertyName("type")]
-    public int Type { get; init; }
+    public required int Type { get; init; }
 
     [JsonPropertyName("message")]
-    public InternalMessage Message { get; init; } = null!;
+    public required InternalMessage Message { get; init; } 
 
     [JsonPropertyName("member")]
-    public InternalGuildMember Member { get; init; } = null!;
+    public required InternalGuildMember Member { get; init; } 
 
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; } 
 
     [JsonPropertyName("guild_id")]
-    public Snowflake GuildId { get; init; } = null!;
+    public required Snowflake GuildId { get; init; }
 
     [JsonPropertyName("data")]
-    public InternalInteractionResolvedData Data { get; init; } = null!;
+    public required InternalInteractionResolvedData Data { get; init; } 
 
     [JsonPropertyName("channel_id")]
-    public Snowflake ChannelId { get; init; } = null!;
+    public required Snowflake ChannelId { get; init; } 
 
     [JsonPropertyName("application_id")]
-    public Snowflake ApplicationId { get; init; } = null!;
+    public required Snowflake ApplicationId { get; init; } 
 }

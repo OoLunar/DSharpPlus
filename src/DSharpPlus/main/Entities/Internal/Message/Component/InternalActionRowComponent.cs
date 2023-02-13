@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -11,11 +10,11 @@ public sealed record InternalActionRowComponent : IInternalMessageComponent
 {
     /// <inheritdoc/>
     [JsonPropertyName("type")]
-    public DiscordComponentType Type { get; init; }
+    public required DiscordComponentType Type { get; init; }
 
     /// <remarks>
     /// Cannot contain another action row.
     /// </remarks>
     [JsonPropertyName("components")]
-    public IReadOnlyList<IInternalMessageComponent> Components { get; init; } = Array.Empty<IInternalMessageComponent>();
+    public required IReadOnlyList<IInternalMessageComponent> Components { get; init; } 
 }
