@@ -9,19 +9,19 @@ public sealed record InternalUserConnection
     /// The id of the connection account.
     /// </summary>
     [JsonPropertyName("id")]
-    public string Id { get; init; } = null!;
+    public required string Id { get; init; }
 
     /// <summary>
     /// The username of the connection account.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; }
 
     /// <summary>
     /// The service of the connection (twitch, youtube).
     /// </summary>
     [JsonPropertyName("type")]
-    public string Type { get; init; } = null!;
+    public required string Type { get; init; }
 
     /// <summary>
     /// Whether the connection is revoked.
@@ -39,23 +39,23 @@ public sealed record InternalUserConnection
     /// Whether the connection is verified.
     /// </summary>
     [JsonPropertyName("verified")]
-    public bool Verified { get; init; }
+    public required bool Verified { get; init; }
 
     /// <summary>
     /// Whether friend sync is enabled for this connection.
     /// </summary>
     [JsonPropertyName("friend_sync")]
-    public bool FriendSync { get; init; }
+    public required bool FriendSync { get; init; }
 
     /// <summary>
     /// Whether activities related to this connection will be shown in presence updates.
     /// </summary>
     [JsonPropertyName("show_activity")]
-    public bool ShowActivity { get; init; }
+    public required bool ShowActivity { get; init; }
 
     /// <summary>
     /// The visibility of this connection.
     /// </summary>
     [JsonPropertyName("visibility")]
-    public DiscordUserConnectionVisibilityType Visibility { get; init; }
+    public required DiscordUserConnectionVisibilityType Visibility { get; init; }
 }

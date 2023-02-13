@@ -3,27 +3,27 @@ using System.Text.Json.Serialization;
 namespace DSharpPlus.Entities.Internal;
 
 /// <summary>
-/// Implements a <see href="https://discord.com/developers/docs/resources/user#user-object-user-structure">Internal User</see>.
+/// Represents a <seealso href="https://discord.com/developers/docs/resources/user#user-object-user-structure">discord user</seealso> object
 /// </summary>
 public sealed record InternalUser
 {
     /// <summary>
-    /// The user's id, used to identify the user across all of Internal.
+    /// The user's id, used to identify the user across all of Discord.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; }
 
     /// <summary>
     /// The user's username, not unique across the platform.
     /// </summary>
     [JsonPropertyName("username")]
-    public string Username { get; init; } = null!;
+    public required string Username { get; init; }
 
     /// <summary>
     /// The user's 4-digit discord-tag.
     /// </summary>
     [JsonPropertyName("discriminator")]
-    public string Discriminator { get; init; } = null!;
+    public required string Discriminator { get; init; }
 
     /// <summary>
     /// The user's avatar hash.
@@ -38,7 +38,7 @@ public sealed record InternalUser
     public Optional<bool> Bot { get; init; }
 
     /// <summary>
-    /// Whether the user is an Official Internal System user (part of the urgent message system).
+    /// Whether the user is an Official Discord System user (part of the urgent message system).
     /// </summary>
     [JsonPropertyName("system")]
     public Optional<bool> System { get; init; }
