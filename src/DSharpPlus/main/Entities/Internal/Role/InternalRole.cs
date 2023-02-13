@@ -11,25 +11,25 @@ public sealed record InternalRole
     /// Role Id.
     /// </summary>
     [JsonPropertyName("id")]
-    public Snowflake Id { get; init; } = null!;
+    public required Snowflake Id { get; init; } 
 
     /// <summary>
     /// Name of the role.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public required string Name { get; init; } 
 
     /// <summary>
     /// The color of the role.
     /// </summary>
     [JsonPropertyName("color")]
-    public int Color { get; init; }
+    public required int Color { get; init; }
 
     /// <summary>
     /// If this role is pinned in the user listing.
     /// </summary>
     [JsonPropertyName("hoist")]
-    public bool Hoist { get; init; }
+    public required bool Hoist { get; init; }
 
     /// <summary>
     /// The role icon hash.
@@ -47,25 +47,25 @@ public sealed record InternalRole
     /// The position of this role.
     /// </summary>
     [JsonPropertyName("position")]
-    public int Position { get; init; }
+    public required int Position { get; init; }
 
     /// <summary>
     /// The Internal permissions of this role.
     /// </summary>
     [JsonPropertyName("permissions")]
-    public DiscordPermissions Permissions { get; init; }
+    public required DiscordPermissions Permissions { get; init; }
 
     /// <summary>
     /// Whether this role is managed by an integration.
     /// </summary>
     [JsonPropertyName("managed")]
-    public bool Managed { get; init; }
+    public required bool Managed { get; init; }
 
     /// <summary>
     /// Whether this role is mentionable.
     /// </summary>
     [JsonPropertyName("mentionable")]
-    public bool Mentionable { get; init; }
+    public required bool Mentionable { get; init; }
 
     /// <summary>
     /// The tags this role has.
