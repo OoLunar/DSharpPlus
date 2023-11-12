@@ -22,7 +22,7 @@ namespace DSharpPlus.CommandsNext;
 /// <summary>
 /// This is the class which handles command registration, management, and execution.
 /// </summary>
-[Obsolete("CommandsNext is deprecated and will be removed in a future version. Please use CommandAll instead.")]
+[Obsolete("DSharpPlus.CommandsNext is deprecated and will be removed in a future version. Please use DSharpPlus.Commands instead.")]
 public class CommandsNextExtension : BaseExtension
 {
     private CommandsNextConfiguration Config { get; }
