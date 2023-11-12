@@ -21,6 +21,7 @@ namespace DSharpPlus.SlashCommands;
 /// <summary>
 /// A class that handles slash commands for a client.
 /// </summary>
+[Obsolete("SlashCommands is deprecated and will be removed in a future version. Please use CommandAll instead.")]
 public sealed class SlashCommandsExtension : BaseExtension
 {
     //A list of methods for top level commands
